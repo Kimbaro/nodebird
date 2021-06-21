@@ -1,5 +1,5 @@
 var SerialPort = require("serialport");
-var serialPort = new SerialPort("/dev/ttyUSB0", {baudrate: 9600, autoOpen: false});
+var serialPort = new SerialPort("/dev/ttyUSB0", {baudRate: 9600, autoOpen: false});
 
 // create a modbus client using the serial port
 var ModbusRTU = require("modbus-serial");
@@ -15,7 +15,7 @@ var client = new ModbusRTU(serialPort);
 client.open();
 
 var x = setInterval(function () {
-    if (client.isOpen()) {
+    if (client.isOpen) {
         client.setID(1);
         client.writeFC3(1, 10, 8, function (err, data) {
             if (err) {
