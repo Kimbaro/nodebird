@@ -6,7 +6,7 @@ module.exports = {
       out_file : './log/out.log',
       log_date_format: 'MM-DD HH:mm:ss',
       env: {
-        'EX_ENV1': 'dev',
+        'PORT0': '/dev/ttyUSB0',
         'EX_ENV2': 'prov',
         'EX_ENV3': 'proto',
       },

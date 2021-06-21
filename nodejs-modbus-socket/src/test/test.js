@@ -6,28 +6,19 @@ var client = new ModbusRTU();
 var timeoutConnectRef = null
 
 function connect(){
-    const serialPort = require('serialport');
+    console.log("Connecting..!!");
+    clearTimeout(timeoutConnectRef);
 
-    serialPort.list().then(function(ports){
-      ports.forEach(function(port){
-        console.log("Port: ", port);
-      })
-    });
-
-    // const serialport = SerialPort.SerialPort;
-    // console.log("test",serialport);
-    // const a = getPortsList();
-//     console.log("Connecting..!!");
-//     clearTimeout(timeoutConnectRef);
-
-//     if(client.isOpen){
-//         console.log('Already connected!!');
-//         run();
-//     }
-// //     client.connectRTUBuffered("/dev/ttyUSB0", {dataBits: 8, stopBits: 1, baudRate: 115200})
-// //     .then(setClient)
-// //     .then(function() {console.log("Connected");})
-//     console.log(client);
+    if(client.isOpen){
+        console.log('Already connected!!');
+        run();
+    }
+    client.connectRTUBuffered("/dev/ttyUSB0", {dataBits: 8, stopBits: 1, baudRate: 115200})
+        .then(setClient)
+        .then(function () {
+            console.log("Connected");
+        })
+    console.log(client);
 }
 var getPortsList = async (callback) => {
     const test = await SerialPort.list;

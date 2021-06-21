@@ -1,3 +1,12 @@
+### Document
+https://github.com/thekip/node-modbus-rtu
+https://www.npmjs.com/package/modbus-serial
+
+### 에러 메모
+Error: Permission denied, cannot open /dev/ttyUSB0
+https://github.com/esp8266/source-code-examples/issues/26
+
+
 test-storage
 
 node test module setting

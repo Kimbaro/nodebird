@@ -2,7 +2,7 @@
 var ModbusRTU = require("modbus-serial");
 var client = new ModbusRTU();
 
-// open connection to a serial port
+// open connection to a serial portsudo chmod -R 777 /dev/ttyUSB0
 client.connectRTUBuffered("/dev/ttymxc2", {baudrate: 9600, parity: 'even'});
 client.setID(1);
 

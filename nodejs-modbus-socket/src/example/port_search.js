@@ -1,4 +1,4 @@
-const SerialPort = require("serialport");
+require('dotenv').config();
 
 function search_port(){
     const serialPort = require('serialport');
