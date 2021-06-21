@@ -8,7 +8,7 @@ client.connectRTUBuffered(process.env.PORT_1, { baudRate: 9600 });
 client.setTimeout(500);
 
 // list of meter's id
-const metersIdList = [10, 11, 12, 13, 14];
+const metersIdList = [0,1,2,3,4,5];
 
 const getMetersValue = async (meters) => {
     try{
