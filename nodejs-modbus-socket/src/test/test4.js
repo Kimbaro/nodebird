@@ -5,11 +5,11 @@ var serialPort = new SerialPort("/dev/ttyUSB0", {baudRate: 9600, autoOpen: false
 var ModbusRTU = require("modbus-serial");
 var client = new ModbusRTU(serialPort);
 
-// client.connectRTU("/dev/ttyUSB0", { baudrate: 9600, autoOpen: false })
-//     .then(function() {
-//         console.log("Connected"); })
-//     .catch(function(e) {
-//         console.log(e.message); });
+client.connectRTU("/dev/ttyUSB0", { baudrate: 9600, autoOpen: false })
+    .then(function() {
+        console.log("Connected"); })
+    .catch(function(e) {
+        console.log(e.message); });
 
 // open connection to a serial port
 client.open();
